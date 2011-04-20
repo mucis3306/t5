@@ -44,7 +44,8 @@ public class DrawingPanel extends JPanel {
 	 */
 	public void setup(MazeBoard board, MazeShape human, MazeRobot robot1,
 	MazeRobot robot2, MazeRobot robot3, MazeGingerRobot ginger1,MazeGingerRobot
-	ginger2,MazeGingerRobot ginger3){
+	ginger2,MazeGingerRobot ginger3)
+	{
 	
 	//public void setup(MazeBoard board, MazeShape human) 
 		this.board = board;
@@ -79,7 +80,7 @@ public class DrawingPanel extends JPanel {
 		 if(control.rob1==true) 
 		 {drawPlayer(robot1, g);} else
 		 if(control.assimilate1==true) 
-		 {drawPlayer(borg1, g);}
+		 {drawPlayer(ginger1, g);}
 		  
 		 if(control.rob2==true) 
 		 {drawPlayer(robot2, g);} else
@@ -91,8 +92,8 @@ public class DrawingPanel extends JPanel {
 		 if(control.assimilate3==true) 
 		 {drawPlayer(ginger3, g);}
 		  
-		// drawPlayer(human, g); if (AController.getGameOver() == true)
-		// drawWinner(g);
+		drawPlayer(human, g); if (AController.getGameOver() == true)
+		drawWinner(g,mytime,finishTime);
 
 		g.drawString(mytime, 857, 20);
 		drawPlayer(human, g);
@@ -169,7 +170,8 @@ public class DrawingPanel extends JPanel {
 	 * @param ms
 	 * @param g
 	 */
-	public void drawPlayer(MazeShape ms, Graphics g) {
+	public void drawPlayer(MazeShape ms, Graphics g) 
+	{
 		String name = ms.getName();
 		g.setColor(ms.getColor());
 		int startX = (ms.getCol() - 1) * mazeSquareSize;
@@ -178,14 +180,12 @@ public class DrawingPanel extends JPanel {
 
 		// /////////////////////////////////////////////////////////
 		// ///////// vvvvvv delete below vvvvvvv ///////////////////
-		if (name.equals("ginger")) {
 			MazeGinger mp = (MazeGinger) ms;
 			int dx2 = startX + mazeSquareSize;
 			int dy2 = startY + mazeSquareSize;
 			int srcSize = mp.getSize();
 			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0, 0,
 					srcSize, srcSize, null);
-		}
 		// /////// ^^^^^^^^ delete above ^^^^^^^ ////////////
 	}
 }

@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import mansfield.edu.liveseyjt25.maze.MazeBorgRobot;
-import mansfield.edu.liveseyjt25.maze.MazeRobot;
 
 /**
  * MVC Controller: receives a handle to the View and controls everything that
@@ -137,12 +135,11 @@ public class AController implements Runnable {
 			human = new MazeGinger(r, c); // get rid of
 		else if (shape.equals("puppy"))
 			human = new MazePuppy(r, c);// change circle to ginger
-		human.setColor(view.controlPanel.getPlayerColorName());
+		//human.setColor(view.controlPanel.getPlayerColorName());
 		// /////////////////////////////////////////////////////
-		// view.drawingPanel.setup(board, human, robot1, robot2, robot3, borg1,
-		// borg2, borg3); //change borg to ginger
+		view.drawingPanel.setup(board, human, robot1, robot2, robot3, ginger1,ginger2, ginger3);
 		// /////////////////////////////////////////////////////
-		view.drawingPanel.setup(board, human/* , robot */);
+		//view.drawingPanel.setup(board, human/* , robot */);
 	}
 
 	/**
@@ -231,15 +228,19 @@ public class AController implements Runnable {
 	private void checkFalseFinish() {
 		if (board.isFalseFinish(human.getRow(), human.getCol()) == true) {
 			board = new MazeBoard(mazeFiles.getMazeFileName());
-			int r = board.getStartRow();
-			int c = board.getStartCol();
-			String shape = view.controlPanel.getPlayerShapeName();
-			setNewShape(r, c, shape);
+			//int r = board.getStartRow();
+			//int c = board.getStartCol();
+			//String shape = view.controlPanel.getPlayerShapeName();
+			//setNewShape(r, c, shape);
 			refresh();
 			sound.boo();
 		}
 	}
 
+	public static boolean getGameOver()
+	{
+		return gameOver;
+	}
 	/**
 	 * Adds animation to the game allowing a robot object to move around on the
 	 * screen.
@@ -277,7 +278,7 @@ public class AController implements Runnable {
 				 ginger3.setRow(robot3.getRow());
 				 
 				checkFinish();
-				checkFalseFinish();
+				//checkFalseFinish();
 				view.drawingPanel.refresh(totalTime, finishTime);
 			}
 
@@ -299,25 +300,25 @@ public class AController implements Runnable {
 		view.addMenu1MIListener(new Menu1MIListener());
 		view.controlPanel
 				.addnameTFActionListener(new nameTFActionListener());
-		view.controlPanel
+		/*view.controlPanel
 				.addPlayerColorCBActionListener(new PlayerColorCBActionListener());
 		view.controlPanel
 				.addPlayerShapeCBActionListener(new PlayerShapeCBActionListener());
 		view.controlPanel
-				.addMusicBtnActionListener(new MusicBtnActionListener());
+				.addMusicBtnActionListener(new MusicBtnActionListener());*/
 	}
 
 	/**
 	 * The color combo box allows the player to choose different colors for the
 	 * simple shape objects that represent the player on the screen.
 	 */
-	private class PlayerColorCBActionListener implements ActionListener {
+	/*private class PlayerColorCBActionListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			human.setColor(view.controlPanel.getPlayerColorName());
 			refresh();
 		}
-	}
+	}*/
 
 	/**
 	 * Will reset the focus on the nameTF
@@ -349,14 +350,14 @@ public class AController implements Runnable {
 	 * The shape combo box allows the player to choose different shapes or
 	 * images to represent the player on the screen.
 	 */
-	private class PlayerShapeCBActionListener implements ActionListener {
+	/*private class PlayerShapeCBActionListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			setNewShape(human.getRow(), human.getCol(),
 					view.controlPanel.getPlayerShapeName());
 			refresh();
 		}
-	}
+	}*/
 
 	/**
 	 * When musicOnOffBtn is clicked the midi files stop playing and the sounds

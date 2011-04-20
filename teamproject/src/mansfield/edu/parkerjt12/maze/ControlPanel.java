@@ -20,7 +20,7 @@ public class ControlPanel extends JPanel {
 	private static final long serialVersionUID = 3930070147267264232L;
 	// added square as another option that the player may choose to use
 	private String[] playerShapeStrings = { "ginger"};
-	
+	JComboBox playerShapeCB;
 	JTextField nameTF;
 	JButton lastBtn, nextBtn, againBtn, musicOnOffBtn;
 
@@ -53,6 +53,11 @@ public class ControlPanel extends JPanel {
 	 */
 	void addnameTFActionListener(ActionListener al) {
 		nameTF.addActionListener(al);
+	}
+	
+	public String getPlayerShapeName() 
+	{
+		return ((String) playerShapeCB.getSelectedItem());
 	}
 
 	// ////////////////////////////////////////////////////

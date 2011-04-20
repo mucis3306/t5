@@ -231,4 +231,16 @@ public class MazeBoard implements MazeBoardInterface {
 	public int getEndCol() {
 		return endCol - 1;
 	}
+	
+	@Override
+	public int getStartRow() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getStartCol() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
