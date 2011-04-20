@@ -1,0 +1,11 @@
+version=1
+8
+12
+xxxxxxxxxxxx
+xsx-x---xxsx
+x-x---xx---x
+x---xe--x-xx
+xx---xx-x--x
+xx-x-----x-x
+xs--x-x---sx
+xxxxxxxxxxxx

@@ -1,0 +1,17 @@
+version=1
+14
+22
+xxxxxxxxxxxxxxxxxxxxxx
+x-----x------x---xs-xx
+x-x-x---xx-x---x--x--x
+xx-x--------x---x---xx
+xx---x-xx-x---x-x--x-x
+xx-x-x---x--x-xs-x---x
+x----x--x-----x---x--x
+xx-x?x-xx-x-x--x-x--xx
+x---x------x---x--x--x
+x?x---x-x----x--x--x-x
+xx-x-x--x-xx--x---xs-x
+x-x---x---x-x-xxx--xxx
+xe--x---x------------x
+xxxxxxxxxxxxxxxxxxxxxx
