@@ -102,7 +102,7 @@ public class DrawingPanel extends JPanel {
 	 */
 	private Color getMazeColor(char c) {
 		if (c == '-' || c == 's' || c == 'r')
-			return Color.gray;
+			return Color.orange;
 		else if (c == 'e')
 			return Color.green; 
 		else if (c == 'x')
@@ -151,134 +151,7 @@ public class DrawingPanel extends JPanel {
 		int startY = (ms.getRow() - 1) * mazeSquareSize;
 		int size = mazeSquareSize;		
 		
-		if (name.equals("circle")) {
-			g.fillOval(startX, startY, size, size);
-		} else if (name.equals("triangle")) {
-			int x2 = startX + mazeSquareSize / 2;
-			int x3 = startX + mazeSquareSize;
-			int y2 = startY + mazeSquareSize;
-			int[] xPoints = { x2, x3, startX, x2 };
-			int[] yPoints = { startY, y2, y2, startY };
-			int nPoints = 4;
-			g.fillPolygon(xPoints, yPoints, nPoints);
-		} 
-		
-		else if (name.equals("fred")) {
-			MazeFred mp = (MazeFred) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		}
-		
-		else if (name.equals("sally")) {
-			MazeSally mp = (MazeSally) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		}
-		
-		else if (name.equals("dinosaur")) {
-			MazeDino mp = (MazeDino) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		}
-		
-		else if (name.equals("nurse")) {
-			MazeNurse mk = (MazeNurse) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mk.getSize();
-			g.drawImage(mk.getImage(), startX, startY, dx2, dy2, 0,
-				0, srcSize, srcSize, null);
-		}
-		else if (name.equals("fox")) {
-			MazeFox mp = (MazeFox) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		} 
-		else if (name.equals("ninja")) {
-			MazeNinja mp = (MazeNinja) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		}
-		else if (name.equals("samurai")) {
-			MazeSamurai mp = (MazeSamurai) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		} 
-		else if (name.equals("shark")) {
-			MazeShark mp = (MazeShark) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		} 
-		else if (name.equals("princess")) {
-			MazePrincess mp = (MazePrincess) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		} 
-		else if (name.equals("penguin")) {
-			MazePenguin mp = (MazePenguin) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		} 
-		else if (name.equals("pirate")) {
-			MazePirate mp = (MazePirate) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		} 
-		else if (name.equals("cowboy")) {
-			MazeCowboy mp = (MazeCowboy) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		} 
-		else if (name.equals("police")) {
-			MazePolice mp = (MazePolice) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		} 
-		else if (name.equals("soldier")) {
-			MazeSoldier mp = (MazeSoldier) ms;
-			int dx2 = startX + mazeSquareSize;
-			int dy2 = startY + mazeSquareSize;
-			int srcSize = mp.getSize();
-			g.drawImage(mp.getImage(), startX, startY, dx2, dy2, 0,
-					0, srcSize, srcSize, null);
-		}
-		else if (name.equals("ginger")) {
+		if (name.equals("ginger")) {
 			MazeGinger mp = (MazeGinger) ms;
 			int dx2 = startX + mazeSquareSize;
 			int dy2 = startY + mazeSquareSize;

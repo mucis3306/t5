@@ -95,9 +95,9 @@ public class AController implements Runnable {
 		ginger1 = new MazeGingerRobot(rr, rc);
 		ginger2 = new MazeGingerRobot(rr, rc);
 		ginger3 = new MazeGingerRobot(rr, rc);
-		String shape = "fred";
+		String shape = "ginger";
 		if(human!=null) shape = view.controlPanel.getPlayerShapeName();
-		setNewShape(r, c, shape);
+		setNewShape(r,c,shape);
 		sound = new MazeSound();
 		if (midi != null) midi.stop();
 		midiFiles.randomSong();
@@ -112,26 +112,10 @@ public class AController implements Runnable {
 	 * @param c the board column the object will sit on
 	 * @param shape the shape the object will take
 	 */
-	private void setNewShape(int r, int c, String shape) {
+	private void setNewShape(int r,int c, String shape) {
 			 
-	         if (shape.equals("fred")) human = new MazeFred(r, c);	 
-		else if (shape.equals("sally")) human = new MazeSally(r, c);
-		else if (shape.equals("dinosaur")) human = new MazeDino(r, c);
-		else if (shape.equals("cowboy")) human = new MazeCowboy(r, c);
-		else if (shape.equals("fox")) human = new MazeFox(r, c);
-		else if (shape.equals("ninja")) human = new MazeNinja(r, c);
-		else if (shape.equals("nurse")) human = new MazeNurse(r, c);
-		else if (shape.equals("penguin")) human = new MazePenguin(r, c);
-		else if (shape.equals("pirate")) human = new MazePirate(r, c);
-		else if (shape.equals("police")) human = new MazePolice(r, c);
-		else if (shape.equals("princess")) human = new MazePrincess(r, c);
-		else if (shape.equals("samurai")) human = new MazeSamurai(r, c);
-		else if (shape.equals("shark")) human = new MazeShark(r, c);
-		else if (shape.equals("soldier")) human = new MazeSoldier(r, c);
-		else if (shape.equals("circle")) human = new MazeCircle(r, c);
-		else if (shape.equals("triangle")) human = new MazeTriangle(r, c);
-		else if (shape.equals("ginger")) human = new MazeGinger(r, c);
-		human.setColor(view.controlPanel.getPlayerColorName());
+	         
+		if (shape.equals("ginger")) human = new MazeGinger(r,c);
 		view.drawingPanel.setup(board, human, robot1, robot2, robot3, ginger1, ginger2, ginger3);
 	}
 	
@@ -155,9 +139,26 @@ public class AController implements Runnable {
 	private void checkFinish() {
 		if (robots == 0 && board.isFinish(human.getRow(), human.getCol()) == true) {
 			gameOver = true;
+			
 			if(human.getName()=="ginger")
 				sound.borg();
 			else sound.cheer();
+			Revive();
+			mazeFiles.nextMaze();
+			String s = mazeFiles.getMazeFileName();
+			mazeFiles.previousMaze();
+			
+			
+			if(!s.equalsIgnoreCase("m9999.txt"))
+			{	
+				//tells the program to go to the next maze
+				mazeFiles.nextMaze();
+				setupBoardAndPlayers();
+			}
+			if(s.equalsIgnoreCase("m9999.txt"))
+			{
+				midi.stop();
+			}
 			
 		}
 	}
@@ -254,8 +255,6 @@ public class AController implements Runnable {
 				new NextBtnActionListener());
 		view.controlPanel.addAgainBtnActionListener(
 				new AgainBtnActionListener());
-		view.controlPanel.addPlayerColorCBActionListener(
-				new PlayerColorCBActionListener());
 		view.controlPanel.addPlayerShapeCBActionListener(
 				new PlayerShapeCBActionListener());
 		view.controlPanel.addSlowBtnActionListener(
@@ -342,19 +341,7 @@ public class AController implements Runnable {
 		}
 	}
 
-	/**
-	 * The color combo box allows the player to choose different colors for
-	 * the simple shape objects that represent the player on the screen.
-	 */
-	private class PlayerColorCBActionListener implements ActionListener
-	{
-		@Override
-		public void actionPerformed(ActionEvent e)
-		{
-			human.setColor(view.controlPanel.getPlayerColorName());
-			refresh();
-		}
-	}
+
 
 	/**
 	 * The shape combo box allows the player to choose different shapes or

@@ -17,7 +17,7 @@ import javax.imageio.ImageIO;
 public class MazeGinger extends MazeShape {
 	BufferedImage image = null;
 	static String name = "ginger";
-	static final int size = 300;
+	static final int size = 350;
 
 	public MazeGinger(int myRow, int myCol) {
 		super(myRow, myCol, name);

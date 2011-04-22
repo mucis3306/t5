@@ -23,13 +23,13 @@ public class MazeGingerRobot extends MazeShape {
 	static String name1 = "ginger1";
 	static String name2 = "ginger2";
 	static String name3 = "ginger3";
-	static final int size = 297;
+	static final int size = 350;
 
 	public MazeGingerRobot(int myRow, int myCol) {
 		super(myRow, myCol, name1);
 		try {
 			java.net.URL imageURL = MazeGingerRobot.class
-					.getResource("/image/g.png");
+					.getResource("/image/g2.png");
 				
 			image = ImageIO.read(imageURL);
 			

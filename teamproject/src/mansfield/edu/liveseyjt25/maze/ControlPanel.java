@@ -17,9 +17,8 @@ import javax.swing.JTextField;
  */
 public class ControlPanel extends JPanel {
 	private static final long serialVersionUID = 3930070147267264232L;
-	private String[] playerShapeStrings = { "fred", "sally", "cowboy", "dinosaur", "fox", "ninja", "nurse","penguin","pirate","police","princess","samurai","shark","soldier","ginger", "circle", "triangle" };
-	private String[] playerColorStrings = { "red", "black", "blue", "cyan",
-			"gray", "green", "magenta", "orange", "pink", "white", "yellow"};
+	private String[] playerShapeStrings = {"ginger"};
+	
 	JComboBox playerColorCB;
 	JComboBox playerShapeCB;
 	JTextField nameTF;
@@ -41,28 +40,26 @@ public class ControlPanel extends JPanel {
 		this.add(fastBtn);
 		
 		JLabel nameLbl = new JLabel("Player Name:");
-		this.add(nameLbl);
+		//this.add(nameLbl);
 
 		nameTF = new JTextField("", 12);
-		this.add(nameTF);
+		//this.add(nameTF);
 		
 		musicOnOffBtn = new JButton("Music On/Off");
 		this.add(musicOnOffBtn);
 
-		playerColorCB = new JComboBox(playerColorStrings);
-		this.add(playerColorCB);
 
 		playerShapeCB = new JComboBox(playerShapeStrings);
-		this.add(playerShapeCB);
+		//this.add(playerShapeCB);
 
 		lastBtn = new JButton("Easier Maze");
-		this.add(lastBtn);
+		//this.add(lastBtn);
 
 		nextBtn = new JButton("Harder Maze");
-		this.add(nextBtn);
+		//this.add(nextBtn);
 
 		againBtn = new JButton("Play Again");
-		this.add(againBtn);
+		//this.add(againBtn);
 	}
 	
 	public void setNameTF(String name){
@@ -123,15 +120,6 @@ public class ControlPanel extends JPanel {
 		againBtn.addActionListener(al);
 	}
 
-	/**
-	 * Callback for the player color combo box ActionListener. Called from
-	 * AController.
-	 * 
-	 * @param al
-	 */
-	void addPlayerColorCBActionListener(ActionListener al) {
-		playerColorCB.addActionListener(al);
-	}
 
 	/**
 	 * Callback for the player shape combo box ActionListener. Called from
@@ -147,14 +135,7 @@ public class ControlPanel extends JPanel {
 		musicOnOffBtn.addActionListener(al);
 	}
 
-	/**
-	 * Gets the player color currently selected by the combo box.
-	 * 
-	 * @return String colorName
-	 */
-	public String getPlayerColorName() {
-		return ((String) playerColorCB.getSelectedItem());
-	}
+
 
 	/**
 	 * Gets the player shape icon currently selected by the combo box.

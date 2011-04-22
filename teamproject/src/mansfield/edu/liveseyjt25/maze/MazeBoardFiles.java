@@ -39,6 +39,11 @@ public class MazeBoardFiles {
 		if(index < mazeFileList.size()-1) ++index;
 	}
 	
+	public void previousMaze() 
+	{
+		if(index < mazeFileList.size()-1) index = index -1 ;
+	}
+	
 	public void lastMaze() {
 		if(index > 0) --index;
 	}
