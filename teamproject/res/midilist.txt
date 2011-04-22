@@ -1,4 +1,6 @@
-entertainer.mid
-maple.mid
-peacherine.mid
-solace.mid
+derris-kharlan_appear.mid
+fighting_of_the_spirit_.mid
+fatalize.mid
+the_law_of_the_battle.mid
+kratos.mid
+last_battle_decision.mid
