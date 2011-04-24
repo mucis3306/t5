@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+
 /**
  * MVC Controller: receives a handle to the View and controls everything
  * that happens as the program runs. It maintains a separate thread that 
@@ -102,6 +103,7 @@ public class AController implements Runnable {
 		if (midi != null) midi.stop();
 		midiFiles.randomSong();
 		midi = new MazeMidi(midiFiles.getMidiFileName());
+		midi.stop();
 		refresh();
 		gameOver = false;
 	}
@@ -138,7 +140,7 @@ public class AController implements Runnable {
 	 */
 	private void checkFinish() {
 		if (robots == 0 && board.isFinish(human.getRow(), human.getCol()) == true) {
-			gameOver = true;
+			
 			
 			if(human.getName()=="ginger")
 				sound.borg();
@@ -158,8 +160,23 @@ public class AController implements Runnable {
 			if(s.equalsIgnoreCase("m9999.txt"))
 			{
 				midi.stop();
+				gameOver = true;
 			}
 			
+		}
+	}
+	
+	private void checkFalseFinish() 
+	{
+		if (board.isFalseFinish(human.getRow(), human.getCol()) == true) 
+		{
+		
+			int r = board.getPStartRow();
+			int c = board.getPStartCol();
+			String shape = "ginger";
+			if(human!=null) shape = view.controlPanel.getPlayerShapeName();
+			setNewShape(r,c,shape);
+			refresh();
 		}
 	}
 	
@@ -232,6 +249,7 @@ public class AController implements Runnable {
 				robot3.moveRobot(board);
 				ginger3.setCol(robot3.getCol()); ginger3.setRow(robot3.getRow());
 				checkFinish();
+				checkFalseFinish();
 				view.drawingPanel.refresh();
 			}
 			

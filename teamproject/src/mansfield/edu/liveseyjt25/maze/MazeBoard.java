@@ -93,11 +93,21 @@ public class MazeBoard implements MazeBoardInterface {
 		}
 		return false;
 	}
+	
+	@Override
+	public boolean isFalseFinish(int row, int col) 
+	{
+		if (mArray[row][col] == '?') 
+		{
+			return true;
+		}
+		return false;
+	}
 
 	@Override
 	public boolean isValidMove(int row, int col) {
 		char c = mArray[row][col];
-		if (c == '-' || c == 's' || c =='r' || c == 'e') {
+		if (c == '-' || c == 's' || c =='r' || c == 'e' || c == '?') {
 			return true;
 		}
 		return false;

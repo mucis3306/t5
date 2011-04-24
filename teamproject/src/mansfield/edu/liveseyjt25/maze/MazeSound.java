@@ -25,12 +25,12 @@ public class MazeSound {
 			popSoundClip.open(popSound);
 			
 			borgSound = AudioSystem.getAudioInputStream(MazeSound.class
-					.getResourceAsStream("/sound/borg.wav"));
+					.getResourceAsStream("/sound/limit.wav"));
 			borgSoundClip = AudioSystem.getClip();
 			borgSoundClip.open(borgSound);
 			
 			resistSound = AudioSystem.getAudioInputStream(MazeSound.class
-					.getResourceAsStream("/sound/resist.wav"));
+					.getResourceAsStream("/sound/ginger.wav"));
 			resistSoundClip = AudioSystem.getClip();
 			resistSoundClip.open(resistSound);
 			

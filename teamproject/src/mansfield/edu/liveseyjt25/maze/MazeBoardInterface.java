@@ -11,6 +11,8 @@ public interface MazeBoardInterface {
 	public void createBoard(String fileName);
 
 	public boolean isFinish(int row, int col);
+	
+	public boolean isFalseFinish(int row, int col);
 
 	public boolean isValidMove(int row, int col);
 

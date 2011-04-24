@@ -103,7 +103,7 @@ public class DrawingPanel extends JPanel {
 	private Color getMazeColor(char c) {
 		if (c == '-' || c == 's' || c == 'r')
 			return Color.orange;
-		else if (c == 'e')
+		else if (c == 'e' || c == '?')
 			return Color.green; 
 		else if (c == 'x')
 			return Color.black;
