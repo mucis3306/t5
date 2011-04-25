@@ -14,7 +14,7 @@ package mansfield.edu.liveseyjt25.maze;
  * @version 1.0
  */
 public class MazeApp {
-	public static int MAZEWIDTH = 1000;
+	public static int MAZEWIDTH  = 1000;
 	public static int MAZEHEIGHT = 600;
 
 	/**

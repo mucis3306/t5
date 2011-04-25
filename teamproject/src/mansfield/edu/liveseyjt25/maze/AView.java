@@ -42,7 +42,7 @@ public class AView {
 		mainPanel.add(drawingPanel, BorderLayout.CENTER);
 		mainPanel.add(controlPanel, BorderLayout.SOUTH);
 
-		frame = new JFrame("Mini Warriors");
+		frame = new JFrame("Ginger Force: Ginger Limit Exceeded");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setContentPane(mainPanel);
 		frame.setResizable(false);

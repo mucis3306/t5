@@ -140,7 +140,7 @@ public class AController implements Runnable {
 	 */
 	private void checkFinish() {
 		if (robots == 0 && board.isFinish(human.getRow(), human.getCol()) == true) {
-			
+			gameOver = false;
 			
 			if(human.getName()=="ginger")
 				sound.borg();

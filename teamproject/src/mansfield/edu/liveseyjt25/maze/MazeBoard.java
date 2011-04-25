@@ -34,6 +34,7 @@ public class MazeBoard implements MazeBoardInterface {
 		Scanner sc = new Scanner(
 				MazeBoard.class.getResourceAsStream("/maze/" + fileName));
 		version = sc.nextLine();
+		
 		endRow = sc.nextInt();
 		sc.nextLine();
 		endCol = sc.nextInt();

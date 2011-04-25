@@ -3,10 +3,10 @@ version=1
 12
 3
 xxxxxxxxxxxx
-xsx-x-x-x-xx
-x---r------x
-xx-x-x-x-x-x
-x----r----?x
-x-x-x-x-x-xx
-xr-r------ex
+xs-----x---x
+xx-xsx-x-x-x
+x--rx--x-x-x
+x-x--sx--x-x
+x-x-xxx-xx-x
+xsxs----xe-x
 xxxxxxxxxxxx

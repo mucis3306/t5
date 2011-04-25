@@ -101,8 +101,8 @@ public class DrawingPanel extends JPanel {
 	 * Determines how to color a given maze square.
 	 */
 	private Color getMazeColor(char c) {
-		if (c == '-' || c == 's' || c == 'r')
-			return Color.orange;
+		if (c == '-' || c == 's' || c == 'r' || c=='b')
+			return Color.gray;
 		else if (c == 'e' || c == '?')
 			return Color.green; 
 		else if (c == 'x')
@@ -132,10 +132,10 @@ public class DrawingPanel extends JPanel {
 	 * @param g
 	 */
 	public void drawWinner(Graphics g) {
-		Font font = new Font("Arial", Font.BOLD, 200);
+		Font font = new Font("Arial", Font.BOLD, 70);
 		g.setFont(font);
 		g.setColor(Color.YELLOW);
-		g.drawString("VICTORY!", 35, 350);
+		g.drawString("GINGER LIMIT EXCEEDED", 35, 350);
 	}
 
 	/**

@@ -1,9 +1,10 @@
 version=1
 8
 12
+3
 xxxxxxxxxxxx
 xx-s---x---x
-xsx-xxxx-x-x
+xsx-xxxr-x-x
 x-x--x---x-x
 x---s--x-xex
 xx-x-x--x-xx
