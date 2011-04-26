@@ -83,8 +83,8 @@ public class AController implements Runnable {
 	/**
 	 * Used to set up a new board, player pieces, sounds, and music.
 	 */
-	private void setupBoardAndPlayers() {
-		gameOver = true;
+	private void setupBoardAndPlayers() 
+	{
 		board = new MazeBoard(mazeFiles.getMazeFileName());
 		int r = board.getPStartRow();
 		int c = board.getPStartCol();
@@ -157,7 +157,7 @@ public class AController implements Runnable {
 				mazeFiles.nextMaze();
 				setupBoardAndPlayers();
 			}
-			if(s.equalsIgnoreCase("m9999.txt"))
+			else if(s.equalsIgnoreCase("m9999.txt"))
 			{
 				midi.stop();
 				gameOver = true;
@@ -248,6 +248,7 @@ public class AController implements Runnable {
 				ginger2.setCol(robot2.getCol()); ginger2.setRow(robot2.getRow());
 				robot3.moveRobot(board);
 				ginger3.setCol(robot3.getCol()); ginger3.setRow(robot3.getRow());
+				gameOver = false;
 				checkFinish();
 				checkFalseFinish();
 				view.drawingPanel.refresh();
